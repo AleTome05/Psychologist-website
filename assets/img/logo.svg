@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" width="560" height="120" role="img" aria-labelledby="t">
+  <title id="t">Dott.ssa Chiara Sergenti – Mente e corpo in movimento</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#EE7F68" stroke-width="1.4" d="M61 34 69 45 59 51 68 60 58 69 65 80 57 90M61 34 59 51 58 69 57 90M69 45 68 60 65 80"/>
+    <g stroke="#3850A0"><path stroke-width="7" d="M45 32c2 10 4 19 9 28"/><path stroke-width="4" d="M47 36c9-2 17-10 27-24M46 37c-6 6-13 8-22 6M54 61c-8 3-14 8-16 15-1 6-3 12-6 19M54 61c5 7 9 14 11 22 2 7 6 14 12 19"/><path stroke-width="2.6" d="M47 17c5-3 10-1 12 5"/></g>
+    <g stroke="#2A3B78"><path stroke-width="7" d="M78 35c-3 10-6 20-11 28"/><path stroke-width="4" d="M77 39c6 5 12 9 17 9 3-4 4-9 4-13M76 40c-4 5-9 9-16 11M67 64c8 3 15 8 19 14 1 6 1 13 2 20M67 64c-4 7-8 14-10 21-3 7-7 13-13 19"/></g>
+  </g>
+  <g fill="#EE7F68"><circle cx="61" cy="34" r="2.2"/><circle cx="69" cy="45" r="2.2"/><circle cx="59" cy="51" r="2.2"/><circle cx="68" cy="60" r="2.2"/><circle cx="58" cy="69" r="2.2"/><circle cx="65" cy="80" r="2.2"/><circle cx="57" cy="90" r="2.2"/></g>
+  <circle cx="42" cy="23" r="6" fill="#3850A0"/><circle cx="80" cy="26" r="6" fill="#2A3B78"/>
+  <g font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif">
+    <text x="130" y="60" font-size="34" fill="#141B3A"><tspan font-weight="300">Dott.ssa</tspan><tspan font-weight="500"> Chiara Sergenti</tspan></text>
+    <text x="131" y="88" font-size="13" font-weight="600" letter-spacing="2.6" fill="#B54A33">MENTE E CORPO IN MOVIMENTO</text>
+  </g>
+</svg>
