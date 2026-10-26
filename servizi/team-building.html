@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team building | Chiara Sergenti</title>
+    <meta name="description" content="Attività di team building per aziende, associazioni e squadre: comunicazione, fiducia e collaborazione. Con Chiara Sergenti, psicologa.">
+
+    <!-- Font: Fraunces (titoli, caldo e autorevole) + Figtree (testo, pulito) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind via CDN: in produzione lo sostituirai con la CLI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        display: ['Fraunces', 'Georgia', 'serif']
+                    },
+                    colors: {
+                        brand: { DEFAULT: '#3850A0', dark: '#2A3B78', light: '#EEF1FA' },
+                        accent: '#F0907A' // corallo: solo come sfondo di pulsanti con testo scuro
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+</head>
+<body class="bg-white font-sans text-slate-700 antialiased">
+
+<!-- ============ NAV: capsula flottante ============ -->
+<header class="fixed inset-x-0 top-3 z-30 px-3">
+    <div class="mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full border border-white/70 bg-white/80 pl-5 pr-2 shadow-lg shadow-brand/10 backdrop-blur-md">
+        <a href="../index.html" class="rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+            <img src="../assets/img/logo.png" alt="Chiara Sergenti, psicologa psicoterapeuta" class="h-8 w-auto">
+        </a>
+        <div class="flex items-center gap-1.5">
+            <a href="../contatti.html" class="hidden rounded-full px-4 py-2 text-sm font-semibold text-brand transition-colors hover:bg-brand-light sm:inline-flex">Contatti</a>
+            <a href="https://wa.me/39XXXXXXXXXX" class="hidden rounded-full bg-accent px-4 py-2 text-sm font-semibold text-slate-900 transition hover:brightness-95 md:inline-flex">Prenota un colloquio</a>
+            <button id="menu-open" type="button"
+                    aria-label="Apri il menu" aria-controls="side-menu" aria-expanded="false"
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-white transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" d="M4 8h16M10 16h10"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Sfondo scuro dietro il menu -->
+<div id="overlay" class="pointer-events-none fixed inset-0 z-40 bg-slate-900/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300"></div>
+
+<!-- Menu laterale -->
+<aside id="side-menu"
+       class="fixed right-0 top-0 z-50 flex h-full w-80 max-w-[85vw] translate-x-full flex-col bg-white p-6 shadow-2xl transition-transform duration-300"
+       aria-label="Menu principale">
+    <div class="flex items-center justify-between">
+        <img src="../assets/img/logo.png" alt="" class="h-8 w-auto">
+        <button id="menu-close" type="button" aria-label="Chiudi il menu"
+                class="flex h-10 w-10 items-center justify-center rounded-full text-brand transition-colors hover:bg-brand-light">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <nav class="mt-10 flex-1">
+        <ul class="divide-y divide-slate-100 font-display text-2xl text-slate-900">
+            <li><a href="../index.html" class="block py-3 transition-colors hover:text-brand">Home</a></li>
+            <li><a href="psicoterapia-cbt.html" class="block py-3 transition-colors hover:text-brand">Psicoterapia CBT</a></li>
+            <li><a href="psicologia-dello-sport.html" class="block py-3 transition-colors hover:text-brand">Psicologia dello sport</a></li>
+            <li><a href="team-building.html" class="block py-3 transition-colors hover:text-brand">Team building</a></li>
+            <li><a href="mindfulness.html" class="block py-3 transition-colors hover:text-brand">Mindfulness</a></li>
+            <li><a href="formazione.html" class="block py-3 transition-colors hover:text-brand">Formazione</a></li>
+            <li><a href="../contatti.html" class="block py-3 transition-colors hover:text-brand">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <a href="https://wa.me/39XXXXXXXXXX" class="rounded-full bg-accent px-6 py-3 text-center font-semibold text-slate-900 transition hover:brightness-95">
+        Scrivimi su WhatsApp
+    </a>
+</aside>
+
+<main>
+    <!-- ============ INTESTAZIONE ============ -->
+    <section class="bg-brand-light pt-28 md:pt-32">
+        <div class="mx-auto max-w-6xl px-4 pb-14 md:pb-20">
+            <a href="../index.html#servizi" class="text-sm font-medium text-brand hover:underline">← Tutti i servizi</a>
+            <h1 class="mt-4 max-w-3xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-brand md:text-5xl">Team building</h1>
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">Attività per aziende, associazioni e squadre che vogliono migliorare comunicazione, fiducia e collaborazione tra le persone.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+                <a href="https://wa.me/39XXXXXXXXXX?text=Buongiorno%2C%20vorrei%20informazioni%20su%20team%20building." target="_blank" rel="noopener" class="rounded-full bg-accent px-7 py-3.5 font-semibold text-slate-900 shadow-sm transition hover:brightness-95">Scrivimi su WhatsApp</a>
+                <a href="../contatti.html" class="rounded-full border border-brand/30 px-7 py-3.5 font-semibold text-brand transition-colors hover:bg-white">Tutti i contatti</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ QUANDO / ARGOMENTI ============ -->
+    <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+        <div class="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
+            <div>
+                <h2 class="font-display text-3xl font-semibold tracking-tight text-brand md:text-4xl">Quando può essere utile</h2>
+                <p class="mt-4 max-w-xs text-slate-600">Le attività sono progettate sul tuo gruppo, anche a distanza, a partire da ciò che il team vive davvero.</p>
+            </div>
+            <ul class="border-t border-slate-200">
+                    <li class="border-b border-slate-200 py-4 text-lg text-slate-800">Un gruppo nuovo che ha bisogno di conoscersi</li>
+                    <li class="border-b border-slate-200 py-4 text-lg text-slate-800">Comunicazione difficile o frequenti incomprensioni</li>
+                    <li class="border-b border-slate-200 py-4 text-lg text-slate-800">Tensioni e conflitti all'interno del team</li>
+                    <li class="border-b border-slate-200 py-4 text-lg text-slate-800">Cambiamenti organizzativi da affrontare insieme</li>
+                    <li class="border-b border-slate-200 py-4 text-lg text-slate-800">Bisogno di ritrovare motivazione e senso di squadra</li>
+                    <li class="border-b border-slate-200 py-4 text-lg text-slate-800">Collaborazione tra persone che lavorano a distanza</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============ COME LAVORIAMO ============ -->
+    <section class="bg-brand-light">
+        <div class="mx-auto max-w-6xl px-4 py-20 md:py-24">
+            <h2 class="font-display text-3xl font-semibold tracking-tight text-brand md:text-4xl">Come lavoriamo</h2>
+            <ol class="mt-10 grid gap-10 md:grid-cols-3 md:gap-8">
+                <li>
+                    <span class="font-display text-4xl font-semibold text-brand/40">1</span>
+                    <h3 class="mt-2 text-lg font-semibold text-slate-900">Ascolto delle esigenze</h3>
+                    <p class="mt-1 text-slate-600">Capiamo insieme il contesto, il gruppo e l'obiettivo che vuoi raggiungere.</p>
+                </li>
+                <li>
+                    <span class="font-display text-4xl font-semibold text-brand/40">2</span>
+                    <h3 class="mt-2 text-lg font-semibold text-slate-900">Attività su misura</h3>
+                    <p class="mt-1 text-slate-600">Progetto un'esperienza adatta al tuo team, per dimensione e tempi.</p>
+                </li>
+                <li>
+                    <span class="font-display text-4xl font-semibold text-brand/40">3</span>
+                    <h3 class="mt-2 text-lg font-semibold text-slate-900">Confronto finale</h3>
+                    <p class="mt-1 text-slate-600">Chiudiamo con un momento di riflessione per portare a casa risultati concreti.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============ CTA FINALE ============ -->
+    <section class="bg-brand">
+        <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-16 md:flex-row md:items-center">
+            <h2 class="max-w-xl font-display text-3xl font-semibold leading-tight text-white md:text-4xl">Hai una domanda? Scrivimi, ti rispondo io.</h2>
+            <a href="https://wa.me/39XXXXXXXXXX?text=Buongiorno%2C%20vorrei%20informazioni%20su%20team%20building." target="_blank" rel="noopener" class="shrink-0 rounded-full bg-accent px-7 py-3.5 font-semibold text-slate-900 transition hover:brightness-95">Contattami su WhatsApp</a>
+        </div>
+    </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-slate-900 py-14 text-slate-300">
+    <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+            <div>
+                <h2 class="font-display text-xl font-semibold text-white">Chiara Sergenti</h2>
+                <p class="mt-3 max-w-xs text-sm leading-relaxed">Psicologa e Psicoterapeuta. Psicoterapia CBT, mindfulness e psicologia dello sport, online.</p>
+            </div>
+
+            <nav aria-label="Link rapidi">
+                <h2 class="font-display text-xl font-semibold text-white">Link rapidi</h2>
+                <ul class="mt-3 space-y-2 text-sm">
+                    <li><a href="../index.html" class="transition-colors hover:text-white">Home</a></li>
+                    <li><a href="psicoterapia-cbt.html" class="transition-colors hover:text-white">Psicoterapia CBT</a></li>
+                    <li><a href="psicologia-dello-sport.html" class="transition-colors hover:text-white">Psicologia dello sport</a></li>
+                    <li><a href="mindfulness.html" class="transition-colors hover:text-white">Mindfulness</a></li>
+                    <li><a href="../contatti.html" class="transition-colors hover:text-white">Contatti</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <h2 class="font-display text-xl font-semibold text-white">Contatti</h2>
+                <address class="mt-3 space-y-2 text-sm not-italic">
+                    <p><a href="tel:+39XXXXXXXXXX" class="transition-colors hover:text-white">+39 XXXXXXXXXX</a></p>
+                    <p><a href="mailto:info@chiarasergenti.it" class="transition-colors hover:text-white">info@chiarasergenti.it</a></p>
+                    <p>[Il tuo Indirizzo, Città]</p>
+                </address>
+                <div class="mt-4 flex gap-4 text-sm">
+                    <a href="#" class="transition-colors hover:text-white">LinkedIn</a>
+                    <a href="#" class="transition-colors hover:text-white">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-700 pt-8 text-xs md:flex-row">
+            <p class="text-center md:text-left">
+                P.IVA: [La tua P.IVA]<span class="mx-2 hidden md:inline">|</span><br class="md:hidden">
+                Iscrizione all'Albo degli Psicologi della regione [Regione] n. [Numero]
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="transition-colors hover:text-white">Privacy Policy</a>
+                <a href="#" class="transition-colors hover:text-white">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
