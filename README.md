@@ -29,7 +29,25 @@ Rigenera tutte le pagine HTML nella root. Il sito è pronto per qualsiasi hostin
 - **Servizi** (menu, footer, card): array `SERVICES` in `build.mjs`.
 - **Dominio**: impostando `SITE.url` il build genera anche `canonical`, `sitemap.xml` e `robots.txt`.
 
-Segnaposto disponibili nelle pagine: `{{root}}`, `{{> partial}}`, `{{icon:nome}}`, `{{wa:testo}}` (link WhatsApp precompilato), `{{site.chiave}}`, `{{services:cards}}`.
+- **Recensioni**: file `src/data/recensioni.json` (vedi sotto).
+
+Segnaposto disponibili nelle pagine: `{{root}}`, `{{> partial}}`, `{{icon:nome}}`, `{{wa:testo}}` (link WhatsApp precompilato), `{{site.chiave}}`, `{{services:cards}}`, `{{reviews:all}}`, `{{reviews:home}}`.
+
+## Aggiungere una recensione
+
+Aprire `src/data/recensioni.json`, copiare un blocco `{ … }` esistente in fondo all’elenco (ricordando la virgola tra un blocco e l’altro), compilarlo e lanciare `node build.mjs`.
+
+| Campo | Obbligatorio | Contenuto |
+|---|---|---|
+| `autore` | sì | Nome come deve comparire (es. “Gianni”, “Nicola P.”). Le iniziali dell’avatar si calcolano da qui |
+| `ruolo` | no | Chi è (es. “Ultramaratoneta”) |
+| `categoria` | sì | Etichetta colorata: es. “Atleti”, “Pazienti”, “Società sportive”, “Colleghi e partner” |
+| `contesto` | no | Su cosa si è lavorato (es. “Preparazione mentale per la 100 km del Passatore”) |
+| `estratto` | sì | Una frase del testo da mettere in evidenza |
+| `testo` | sì | Elenco di paragrafi: `["primo paragrafo", "secondo paragrafo"]` |
+| `home` | no | `true` per mostrarla in Home (al massimo 3, le prime dell’elenco) |
+
+Pubblicare solo con il consenso scritto dell’autore; per i pazienti meglio usare nome di battesimo o iniziali.
 
 ## Prima della pubblicazione
 

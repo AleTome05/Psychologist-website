@@ -1,0 +1,54 @@
+<!--{
+  "title": "Recensioni | Dott.ssa Chiara Sergenti, Psicoterapeuta e Psicologa dello Sport",
+  "description": "Le esperienze di atleti, società sportive e colleghi che hanno lavorato con la Dott.ssa Chiara Sergenti: preparazione mentale, formazione per tecnici e corsi di psicologia dello sport.",
+  "nav": "recensioni"
+}-->
+<section class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero__mark" aria-hidden="true">{{> logo-mark}}</div>
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Percorso">
+            <ol><li><a href="index.html">Home</a></li><li aria-current="page">Recensioni</li></ol>
+        </nav>
+        <p class="eyebrow">Recensioni</p>
+        <h1 id="page-title">Dicono di me</h1>
+        <p class="lead">Atleti, società sportive e colleghi raccontano con parole loro il lavoro fatto insieme: dalla preparazione mentale per una gara estrema alla formazione degli staff tecnici.</p>
+    </div>
+</section>
+
+<section class="section" aria-label="Elenco delle recensioni">
+    <div class="container">
+        <div class="reviews">
+            {{reviews:all}}
+        </div>
+    </div>
+</section>
+
+<section class="section section--tint" aria-labelledby="lascia-title">
+    <div class="container split split--center">
+        <div data-reveal="left">
+            <p class="eyebrow">La tua esperienza</p>
+            <h2 id="lascia-title">Hai lavorato con me?</h2>
+        </div>
+        <div data-reveal>
+            <p class="lead">Se ti va di raccontare il percorso fatto insieme, mandami due righe: con il tuo consenso le pubblicherò qui, anche solo con il nome o le iniziali.</p>
+            <div class="btn-row mt-2">
+                <a class="btn btn--primary" href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei lasciarle una recensione.}}" target="_blank" rel="noopener">{{icon:whatsapp}} Scrivila su WhatsApp</a>
+                <a class="btn btn--outline" href="mailto:{{site.email}}?subject=Recensione%20per%20il%20sito">{{icon:mail}} Inviala per email</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container" aria-labelledby="cta-title">
+    <div class="cta" data-reveal>
+        <div class="cta__mark" aria-hidden="true">{{> logo-mark}}</div>
+        <div>
+            <h2 id="cta-title">Iniziamo a lavorare insieme</h2>
+            <p>Per te, per la tua squadra o per la tua organizzazione. Raccontami il tuo obiettivo.</p>
+        </div>
+        <div class="btn-row">
+            <a class="btn btn--primary" href="contatti.html">Contattami {{icon:arrow}}</a>
+            <a class="btn btn--light" href="tel:{{site.phoneHref}}">{{icon:phone}} Chiama</a>
+        </div>
+    </div>
+</section>

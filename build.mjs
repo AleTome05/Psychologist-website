@@ -85,6 +85,38 @@ const serviceBlocks = {
 </a>`).join('\n'),
 };
 
+// Recensioni: si aggiungono in src/data/recensioni.json (vedi README), in ordine di pubblicazione
+const REVIEWS = JSON.parse(await readFile(join(SRC, 'data', 'recensioni.json'), 'utf8'));
+REVIEWS.forEach((r, i) => {
+  for (const key of ['autore', 'categoria', 'estratto', 'testo']) {
+    if (!r[key] || (key === 'testo' && !Array.isArray(r.testo))) throw new Error(`recensioni.json, voce ${i + 1}: campo "${key}" mancante o non valido`);
+  }
+});
+
+const esc = (s = '') => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const initials = (name) => name.replace(/[^\p{L}\s]/gu, '').split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+const reviewAuthor = (r) => `
+  <figcaption class="review__author">
+    <span class="review__avatar" aria-hidden="true">${esc(initials(r.autore))}</span>
+    <span><strong>${esc(r.autore)}</strong>${r.ruolo ? `<small>${esc(r.ruolo)}</small>` : ''}</span>
+  </figcaption>`;
+
+const reviewBlocks = {
+  // Pagina recensioni: testo completo, l'estratto è un richiamo visivo (già presente nel testo)
+  all: () => REVIEWS.map((r, i) => `
+<figure class="review" data-reveal style="--delay:${(i % 2) * 0.08}s">
+  <div class="review__meta"><span class="chip chip--coral">${esc(r.categoria)}</span>${r.contesto ? `<span>${esc(r.contesto)}</span>` : ''}</div>
+  <p class="review__highlight" aria-hidden="true">${esc(r.estratto)}</p>
+  <blockquote class="review__text">${r.testo.map((p) => `<p>${esc(p)}</p>`).join('')}</blockquote>${reviewAuthor(r)}
+</figure>`).join('\n'),
+  // Home: solo l'estratto delle voci con "home": true (max 3)
+  home: () => REVIEWS.filter((r) => r.home).slice(0, 3).map((r, i) => `
+<figure class="review review--compact" data-reveal style="--delay:${i * 0.08}s">
+  <span class="chip chip--coral">${esc(r.categoria)}</span>
+  <blockquote class="review__highlight"><p>${esc(r.estratto)}</p></blockquote>${reviewAuthor(r)}
+</figure>`).join('\n'),
+};
+
 // ---------------------------------------------------------------------------
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -112,6 +144,7 @@ function render(template, ctx, partials) {
   }
   out = out
     .replace(/{{services:(\w+)(?::([\w-]+))?}}/g, (_, kind, arg) => serviceBlocks[kind](arg))
+    .replace(/{{reviews:(\w+)}}/g, (_, kind) => reviewBlocks[kind]())
     .replace(/{{icon:([\w-]+)}}/g, (_, name) => icon(name))
     .replace(/{{wa:([^}]+)}}/g, (_, text) => waLink(text.trim()))
     .replace(/{{site\.(\w+)}}/g, (_, key) => SITE[key] ?? '')
