@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+{{> head}}
+</head>
+<body class="{{bodyClass}}">
+{{> header}}
+
+<main id="contenuto" tabindex="-1">
+{{content}}
+</main>
+
+{{> footer}}
+
+<a class="wa-float" href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei avere alcune informazioni.}}" target="_blank" rel="noopener" data-wa-float>
+    {{icon:whatsapp}}<span>Scrivimi</span><span class="visually-hidden"> su WhatsApp (si apre in una nuova scheda)</span>
+</a>
+
+<script src="{{root}}assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+<header class="site-header" data-header>
+    <div class="container site-header__inner">
+        <a class="brand" href="{{root}}index.html" aria-label="Dott.ssa Chiara Sergenti, torna alla home">
+            {{> logo-mark}}
+            <span class="brand__text" aria-hidden="true">
+                <span class="brand__name"><b>Dott.ssa</b> Chiara Sergenti</span>
+                <span class="brand__tagline">Mente e corpo in movimento</span>
+            </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navigazione principale">
+            <ul class="main-nav__list">
+                <li><a class="main-nav__link" href="{{root}}index.html" data-nav="home">Home</a></li>
+                <li><a class="main-nav__link" href="{{root}}chi-sono.html" data-nav="chi-sono">Chi sono</a></li>
+                <li class="has-dropdown" data-dropdown>
+                    <a class="main-nav__link" href="{{root}}servizi/index.html" data-nav="servizi">Servizi</a>
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="menu-servizi">
+                        {{icon:chevron}}<span class="visually-hidden">Mostra l’elenco dei servizi</span>
+                    </button>
+                    <ul class="dropdown" id="menu-servizi">
+                        {{services:dropdown}}
+                    </ul>
+                </li>
+                <li><a class="main-nav__link" href="{{root}}contatti.html" data-nav="contatti">Contatti</a></li>
+            </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm header-cta" href="{{root}}contatti.html">Prenota un colloquio</a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+            <span class="menu-toggle__bars" aria-hidden="true"></span>
+            <span class="visually-hidden" data-menu-label>Apri il menu</span>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" data-mobile-menu inert>
+    <nav aria-label="Navigazione principale (mobile)">
+        <ul class="mobile-menu__list">
+            <li><a href="{{root}}index.html" data-nav="home">Home</a></li>
+            <li><a href="{{root}}chi-sono.html" data-nav="chi-sono">Chi sono</a></li>
+            <li>
+                <a href="{{root}}servizi/index.html" data-nav="servizi">Servizi</a>
+                <ul class="mobile-menu__sub">
+                    {{services:mobile}}
+                </ul>
+            </li>
+            <li><a href="{{root}}contatti.html" data-nav="contatti">Contatti</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu__contacts">
+        <a class="btn btn--primary" href="{{root}}contatti.html">Prenota un colloquio</a>
+        <a class="btn btn--outline" href="tel:{{site.phoneHref}}">{{icon:phone}} {{site.phone}}</a>
+        <p><a href="mailto:{{site.email}}">{{site.email}}</a></p>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+<!--{
+  "title": "Contatti | Dott.ssa Chiara Sergenti, Psicoterapeuta e Psicologa dello Sport",
+  "description": "Prenota un colloquio con la Dott.ssa Chiara Sergenti: telefono +39 347 3583953, WhatsApp o email. Psicoterapia, psicologia dello sport, team building e formazione.",
+  "nav": "contatti"
+}-->
+<section class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero__mark" aria-hidden="true">{{> logo-mark}}</div>
+    <div class="container">
+        <nav class="breadcrumb" aria-label="Percorso">
+            <ol><li><a href="index.html">Home</a></li><li aria-current="page">Contatti</li></ol>
+        </nav>
+        <p class="eyebrow">Contatti</p>
+        <h1 id="page-title">Parliamone: scrivimi o chiamami</h1>
+        <p class="lead">Raccontami in poche righe cosa ti porta qui. Ti rispondo personalmente per fissare un primo colloquio o per costruire insieme una proposta.</p>
+    </div>
+</section>
+
+<section class="section" aria-label="Recapiti e messaggio">
+    <div class="container split">
+        <div data-reveal="left">
+            <h2 class="h3-like">Scegli come contattarmi</h2>
+            <ul class="contact-list mt-1">
+                <li>
+                    <a href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei avere alcune informazioni.}}" target="_blank" rel="noopener">
+                        <span class="card__icon">{{icon:whatsapp}}</span>
+                        <span><small>WhatsApp · la risposta più rapida</small><span class="value">{{site.phone}}</span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:{{site.phoneHref}}">
+                        <span class="card__icon">{{icon:phone}}</span>
+                        <span><small>Telefono</small><span class="value">{{site.phone}}</span></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:{{site.email}}">
+                        <span class="card__icon">{{icon:mail}}</span>
+                        <span><small>Email</small><span class="value">{{site.email}}</span></span>
+                    </a>
+                </li>
+                <li>
+                    <div class="contact-item">
+                        <span class="card__icon">{{icon:pin}}</span>
+                        <span><small>Dove</small><span class="value">Emilia-Romagna e online</span></span>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 class="h3-like mt-3">Messaggio rapido su WhatsApp</h2>
+            <p class="muted mt-1">Scegli l’argomento: si apre la chat con un testo già pronto, che puoi modificare prima di inviarlo.</p>
+            <div class="grid mt-1" style="gap:.65rem">
+                <a class="btn btn--outline btn--block" href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei fissare un primo colloquio di psicoterapia.}}" target="_blank" rel="noopener">Primo colloquio di psicoterapia {{icon:arrow}}</a>
+                <a class="btn btn--outline btn--block" href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei informazioni su un percorso di coppia o di parent training.}}" target="_blank" rel="noopener">Coppia e parent training {{icon:arrow}}</a>
+                <a class="btn btn--outline btn--block" href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei richiedere una consulenza di psicologia dello sport.}}" target="_blank" rel="noopener">Consulenza di psicologia dello sport {{icon:arrow}}</a>
+                <a class="btn btn--outline btn--block" href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei informazioni su team building e formazione.}}" target="_blank" rel="noopener">Team building e formazione {{icon:arrow}}</a>
+            </div>
+        </div>
+
+        <div class="panel" data-reveal>
+            <h2 class="h3-like">Scrivimi un messaggio</h2>
+            <p class="muted mt-1">Compila i campi: alla conferma si aprirà il tuo programma di posta con il messaggio già pronto da inviare.</p>
+            <form class="form mt-2" action="mailto:{{site.email}}" method="post" enctype="text/plain" data-contact-form novalidate>
+                <div class="form__row">
+                    <div class="field">
+                        <label for="nome">Nome e cognome</label>
+                        <input id="nome" name="nome" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="telefono">Telefono <span class="muted">(facoltativo)</span></label>
+                        <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="argomento">Argomento</label>
+                    <select id="argomento" name="argomento">
+                        <option>Psicoterapia e supporto psicologico</option>
+                        <option>Coppia e parent training</option>
+                        <option>Mindfulness e rilassamento</option>
+                        <option>Psicologia dello sport</option>
+                        <option>Team building</option>
+                        <option>Formazione e consulenza</option>
+                        <option>Altro</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="messaggio">Messaggio</label>
+                    <textarea id="messaggio" name="messaggio" required aria-describedby="messaggio-hint"></textarea>
+                    <span class="field__hint" id="messaggio-hint">Bastano poche righe: ne parleremo meglio al primo colloquio.</span>
+                </div>
+                <label class="consent">
+                    <input type="checkbox" name="privacy" required>
+                    <span>Ho letto l’<a href="privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato/a.</span>
+                </label>
+                <button class="btn btn--primary" type="submit">Prepara il messaggio {{icon:arrow}}</button>
+                <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="section section--soft section--tight" aria-labelledby="inizio-title">
+    <div class="container">
+        <div class="section-head" data-reveal>
+            <p class="eyebrow">Cosa succede dopo</p>
+            <h2 id="inizio-title">Dal primo messaggio al primo incontro</h2>
+        </div>
+        <ol class="steps">
+            <li data-reveal><h3>Ti rispondo</h3><p>Leggo personalmente ogni messaggio e ti ricontatto per capire meglio la tua richiesta.</p></li>
+            <li data-reveal style="--delay:.1s"><h3>Fissiamo il colloquio</h3><p>Scegliamo insieme giorno, orario e modalità, in presenza oppure online.</p></li>
+            <li data-reveal style="--delay:.2s"><h3>Ci conosciamo</h3><p>Nel primo incontro mettiamo a fuoco bisogni e obiettivi, senza impegno a proseguire.</p></li>
+        </ol>
+        <p class="note mt-2" data-reveal>Questo sito non è un servizio di emergenza. Se ti trovi in una situazione di pericolo o di crisi acuta, chiama il <strong>112</strong> o rivolgiti al pronto soccorso più vicino.</p>
+    </div>
+</section>

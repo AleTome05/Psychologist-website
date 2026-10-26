@@ -1,0 +1,50 @@
+<footer class="site-footer {{footerClass}}">
+    <div class="container">
+        <div class="footer__grid">
+            <div>
+                <a class="brand" href="{{root}}index.html" aria-label="Dott.ssa Chiara Sergenti, torna alla home">
+                    {{> logo-mark}}
+                    <span class="brand__text" aria-hidden="true">
+                        <span class="brand__name"><b>Dott.ssa</b> Chiara Sergenti</span>
+                        <span class="brand__tagline">Psicoterapia · Psicologia dello sport</span>
+                    </span>
+                </a>
+                <p class="footer__about">Psicoterapeuta cognitivo-comportamentale e psicologa dello sport. Percorsi per persone, coppie, atleti, squadre e organizzazioni.</p>
+                <p class="footer__payoff">Mente e corpo in movimento</p>
+            </div>
+
+            <nav aria-label="Pagine del sito">
+                <h2 class="footer__title">Il sito</h2>
+                <ul class="footer__links">
+                    <li><a href="{{root}}index.html">Home</a></li>
+                    <li><a href="{{root}}chi-sono.html">Chi sono</a></li>
+                    <li><a href="{{root}}servizi/index.html">Tutti i servizi</a></li>
+                    <li><a href="{{root}}contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+
+            <nav aria-label="Servizi">
+                <h2 class="footer__title">Servizi</h2>
+                <ul class="footer__links">
+                    {{services:footer}}
+                </ul>
+            </nav>
+
+            <div>
+                <h2 class="footer__title">Contatti</h2>
+                <address>
+                    <a href="tel:{{site.phoneHref}}">{{site.phone}}</a>
+                    <a href="mailto:{{site.email}}">{{site.email}}</a>
+                    <a href="{{wa:Buongiorno Dott.ssa Sergenti, vorrei avere alcune informazioni.}}" target="_blank" rel="noopener">WhatsApp<span class="visually-hidden"> (si apre in una nuova scheda)</span></a>
+                    <span>Emilia-Romagna · online</span>
+                </address>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>© <span data-year>2026</span> {{site.name}} — Psicologa e Psicoterapeuta<br>
+               Iscritta all’{{site.albo}} · P.IVA {{site.piva}}</p>
+            <p><a href="{{root}}privacy.html">Privacy e cookie</a></p>
+        </div>
+    </div>
+</footer>
